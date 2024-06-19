@@ -1,0 +1,721 @@
+.editing-main {
+    margin: 0 calc((100% - 1522px) / 2);
+}
+
+.editing-main h1 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 45.36px;
+    margin: 0;
+    letter-spacing: -0.04em;
+    text-align: center;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    margin-top: 29px;
+    margin-bottom: 29px;
+}
+
+.editing {
+    display: flex;
+    flex-wrap:wrap;
+    position: relative;
+    z-index: 20;
+    background-color: #F6F7F9;
+}
+
+.editing .editing-profile {
+    display: flex;
+    flex-direction: column;
+    width: 833px;
+    height: 372px;
+    background-color: #E0E0E0;
+    border-radius: 20px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    margin-right: 37px;
+    margin-bottom: 36px;
+}
+
+.editing .editing-profile h1 {
+    display: none;
+}
+
+.editing .editing-profile .name {
+    width: 344.9px;
+    height: 45px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    border: none;
+    margin-top: 26.22px;
+    margin-left: 45.36px;
+    margin-bottom: 23.78px;
+    text-indent: 30px;
+    transition: filter 0.3s;
+}
+
+.editing .editing-profile .name::placeholder {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17.07px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.editing .editing-profile .name:focus {
+    outline: none;
+}
+
+.editing .editing-profile .name:hover {
+   filter:drop-shadow(0 5px 5px rgba(253, 199, 57, 0.24));
+   cursor: pointer;
+}
+
+.editing .editing-profile .direction {
+    padding: 15.5px 32.5px;
+    border: none;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17.07px;
+    transition: box-shadow 0.3s;
+}
+
+.editing .editing-profile .direction-container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 26px;
+    row-gap: 10px;
+    margin-bottom: 19px;
+    margin-left: 45.36px;
+}
+
+.editing .editing-profile .direction:hover {
+    box-shadow: 0 0 35px 3px rgba(253, 197, 53, 0.8);
+}
+
+.editing .editing-profile .link-container {
+    display: flex;
+    margin-left: 45.36px;
+    margin-bottom: 10px;
+}
+
+.editing .editing-profile .figma-container {
+    margin-bottom: 18px;
+}
+
+.editing-profile .link-container .link {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24.38px;
+    text-decoration: none;
+    color: #000000;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.editing-profile .github-container .github {
+    background-image: url("../img/github.svg");
+    background-repeat: no-repeat;
+    padding-left: 31px;
+}
+
+.editing-profile .leetcode-container .leetcode {
+    background-image: url("../img/leetcode.svg");
+    background-repeat: no-repeat;
+    padding-left: 31px;
+}
+
+.editing-profile .telegram-container .telegram {
+    background-image: url("../img/telegram-link.svg");
+    background-repeat: no-repeat;
+    padding-left: 31px;
+}
+
+.editing-profile .figma-container .figma {
+    background-image: url("/static/img/figma.svg");
+    background-repeat: no-repeat;
+    padding-left: 31px;
+}
+
+.editing-profile .site-container .site {
+    background-image: url("/static/img/site.svg");
+    background-repeat: no-repeat;
+    padding-left: 31px;
+}
+
+.editing-profile .vk-container .vk {
+    background-image: url("/static/img/vk-s.svg");
+    background-repeat: no-repeat;
+    padding-left: 31px;
+}
+
+.editing-profile .link-container .link-field {
+    display: block;
+    width: 580px;
+    height: 27px;
+    margin-right: 60px;
+    margin-left: auto;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 3px;
+    text-indent: 30px;
+    transition: filter 0.3s;
+}
+
+.editing-profile .link-container .link-field:hover {
+    filter: drop-shadow(0 5px 5px rgba(253, 199, 57, 0.24));
+    cursor: pointer;
+}
+
+.editing-profile .link-container .link-field:focus {
+    outline: none;
+}
+
+.editing .editing-profile .save {
+    display: block;
+    width: 210px;
+    height: 38px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-right: 60px;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #FDC739;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.editing .editing-check {
+    width: 652px;
+    height: 372px;
+    display: flex;
+    flex-direction: column;
+    background-color: #E0E0E0;
+    border-radius: 20px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.editing .editing-check .main-info {
+    display: flex;
+    margin-left: 54px;
+    margin-bottom: 53.35px;
+}
+
+.editing-check .main-info .left {
+    margin-top: 22px;
+}
+
+.editing-check .main-info .window-check {
+    margin: 0;
+    margin-left: auto;
+    width: 373px;
+    height: 38px;
+    text-align: center;
+    background-color: #FDC739;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 38px;
+    color: #FFFFFF;
+    border-radius: 0 20px 0 20px;
+}
+
+.editing-check .main-info .name {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39.01px;
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+.editing-check .main-info .direction {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24.38px;
+    margin-bottom: 0;
+    margin-top: 0;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.editing-check .main-info .experience {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15.85px;
+    margin-top: 0;
+    margin-bottom: 0;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.editing .editing-check .link-container {
+    display: flex;
+    margin-left: 45.36px;
+    margin-bottom: 10px;
+}
+
+.editing .editing-check .figma-container {
+    margin-bottom: 19px;
+}
+
+.editing-check .link-container .link {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24.38px;
+    text-decoration: none;
+    color: #000000;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.editing-check .github-container .github {
+    background-image: url("/static/img/github.svg");
+    background-repeat: no-repeat;
+    padding-left: 31px;
+}
+
+.editing-check .leetcode-container .leetcode {
+    background-image: url("/static/img/leetcode.svg");
+    background-repeat: no-repeat;
+    padding-left: 31px;
+}
+
+.editing-check .telegram-container .telegram {
+    background-image: url("/static/img/telegram-link.svg");
+    background-repeat: no-repeat;
+    padding-left: 31px;
+}
+
+.editing-check .figma-container .figma {
+    background-image: url("/static/img/figma.svg");
+    background-repeat: no-repeat;
+    padding-left: 31px;
+}
+
+.editing-check .link-container .link-field {
+    display: block;
+    width: 403px;
+    height: 27px;
+    margin-right: 59px;
+    margin-left: auto;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 3px;
+    text-indent: 30px;
+    transition: filter 0.3s;
+}
+
+.editing-check .link-container .link-field:hover {
+    filter: drop-shadow(0 5px 5px rgba(253, 199, 57, 0.24));
+    cursor: pointer;
+}
+
+.editing-check .link-container .link-field:focus {
+    outline: none;
+}
+
+.editing .editing-check .check {
+    display: block;
+    margin-right: 59px;
+    margin-bottom: 12px;
+    margin-left: auto;
+    margin-top: auto;
+    width: 314px;
+    height: 38px;
+    border: none;
+    border-radius: 6px;
+    background-color: #FDC739;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.editing .editing-description {
+    display: flex;
+    flex-direction: column;
+    width: 1522px;
+    height: 413px;
+    background-color: #E0E0E0;
+    border-radius: 20px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    margin-bottom: 50px;
+}
+
+.editing .editing-description .write {
+    margin-top: 42px;
+    margin-bottom: 12px;
+    margin-left: 100px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 18px;
+}
+
+.editing .editing-description .description-field {
+    margin-left: 100px;
+    margin-bottom: 2px;
+    width: 1300px;
+    height: 196px;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    resize: none;
+    transition: filter 0.3s;
+}
+
+.editing .editing-description .description-field:hover {
+    filter: drop-shadow(0 5px 5px rgba(253, 199, 57, 0.24));
+    cursor: pointer;
+}
+
+.editing .editing-description .description-field:focus {
+    outline: none;
+}
+
+.editing .editing-description .experience {
+    margin-left: 100px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29.26px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+
+.editing .editing-description .save {
+    display: block;
+    margin-right: 102px;
+    margin-left: auto;
+    width: 210px;
+    height: 38px;
+    border: none;
+    border-radius: 6px;
+    background-color: #FDC739;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.editing-main .settings-btn {
+    display: block;
+    cursor: pointer;
+    background-color: #E0E0E0;
+    width: 823px;
+    height: 78px;
+    margin-left: calc((100% - 823px) / 2);
+    margin-right: calc((100% - 823px) / 2);
+    border-radius: 4px 4px 14px 14px;
+    border: none;
+    border-bottom: 10px solid #FDC739;
+    text-align: center;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 68px;
+    letter-spacing: -0.04em;
+    color: #000000;
+    text-decoration: none;
+    transition: border-bottom 0.5s;
+}
+
+.editing-main .settings-btn:hover {
+    border-bottom: 10px solid #000000;
+}
+
+.editing-main .settings-btn.active {
+    border-bottom: 10px solid #000000;
+}
+
+.editing-main .settings-btn.active:hover {
+    border-bottom: 10px solid #FDC739;
+}
+
+
+@media (max-width:1600px) {
+
+    .editing-main {
+        margin: 0 calc((100% - 1002px) / 2);
+    }
+
+    .editing .editing-profile {
+        width: 541px;
+        height: 340px;
+        margin-right: 37px;
+        margin-bottom: 36px;
+    }
+
+    .editing .editing-profile .name {
+        margin-left: 20px;
+        margin-bottom: 15px;
+    }
+
+    .editing .editing-profile .direction {
+        padding: 6px 9px;
+        border: none;
+        border-radius: 6px;
+        background-color: #FFFFFF;
+        color: #000000;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17.07px;
+        transition: box-shadow 0.3s;
+    }
+
+    .editing .editing-profile .direction-container {
+        column-gap: 12px;
+        margin-left: 20px;
+    }
+
+    .editing-profile .link-container .link-field {
+        width: 370px;
+        height: 25px;
+        margin-right: 30px;
+    }
+
+    .editing .editing-profile .link-container {
+        margin-left: 20px;
+    }
+
+    .editing-profile .link-container .link {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .editing .editing-profile .save {
+        margin-right: 30px;
+    }
+
+    .editing .editing-check {
+        width: 424px;
+        height: 340px;
+    }
+
+    .editing .editing-check .main-info {
+        margin-left: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .editing-check .main-info .left {
+        margin-top: 15px;
+    }
+
+    .editing-check .main-info .window-check {
+        width: 242px;
+        height: 35px;
+    }
+    
+    .editing-check .main-info .name {
+        font-size: 28px;
+        line-height: 37px;
+    }
+
+    .editing .editing-check .link-container {
+        margin-left: 20px;
+    }
+    
+    .editing .editing-check .figma-container {
+        margin-bottom: 19px;
+    }
+    
+    .editing-check .link-container .link {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .editing-check .link-container .link-field {
+        width: 250px;
+        height: 25px;
+        margin-right: 30px;
+    }
+
+    .editing .editing-check .check {
+        margin-right: 30px;
+    }
+
+    .editing .editing-description {
+        width: 989px;
+    }
+
+    .editing .editing-description .description-field {
+        width: 845px;
+        margin-left: 65px;
+    }
+
+    .editing .editing-description .write {
+        margin-left: 65px;
+    }
+
+    .editing .editing-description .experience {
+        margin-left: 65px;
+    }
+
+    .editing .editing-description .save {
+        margin-right: 65px;
+    }
+}
+
+@media (max-width: 1070px) {
+
+    .editing-main h1 {
+        font-size: 36px;
+        line-height: 32px;
+    }
+
+    .editing-main {
+        margin: 0 calc((100% - 541px) / 2);
+    }
+
+    .editing .editing-description {
+        width: 541px;
+        margin-bottom: 30px;
+    }
+
+    .editing .editing-description .description-field {
+        width: 465px;
+        margin-left: 27px;
+    }
+
+    .editing .editing-description .write {
+        margin-left: 27px;
+    }
+
+    .editing .editing-description .experience {
+        margin-left: 27px;
+    }
+
+    .editing .editing-description .save {
+        margin-right: 27px;
+    }
+
+    .editing-main .settings-btn {
+        width: 400px;
+        height: 50px;
+        margin-left: calc((100% - 400px) / 2);
+        margin-right: calc((100% - 400px) / 2);
+        font-size: 24px;
+        line-height: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .editing-main {
+        margin: 0 calc((100% - 88vw) / 2);
+    }
+
+    .editing-main h1 {
+        display: none;
+    }
+
+    .editing .editing-profile h1 {
+        display: block;
+        font-size: 16px;
+        line-height: 15px;
+        margin: 0;
+        margin-top: 25px;
+        margin-bottom: 23px;
+    }
+
+    .editing .editing-profile {
+        margin-right: 0;
+        margin-top: 42px;
+        width: 88vw;
+        height: 592px;
+        margin-bottom: 25px;
+    }
+
+    .editing .editing-employer {
+        height: 522px;
+    }
+
+    .editing .editing-profile .name {
+        width: 75vw;
+        height: 26px;
+        margin: 0;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        text-indent: 8px;
+    }
+    
+    .editing .editing-profile .name::placeholder {
+        font-size: 11px;
+        line-height: 14px;
+    }
+
+    .editing .editing-profile .direction {
+        padding: 0;
+        border-radius: 5px;
+        font-size: 11px;
+        line-height: 13px;
+        width: 146px;
+        height: 26px;
+    }
+    
+    .editing .editing-profile .direction-container {
+        width: 75vw;
+        row-gap: 10px;
+        margin-bottom: 36px;
+        margin-left: 20px;
+    }
+
+    .editing .editing-profile .link-container {
+        flex-wrap: wrap;
+        row-gap: 10px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+
+    .editing-profile .link-container .link {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .editing-profile .link-container .link-field {
+        margin-left: 0;
+        width: 75vw;
+    }
+
+    .editing .editing-profile .save {
+        margin-right: auto;
+        margin-bottom: 25px;
+    }
+
+    .editing .editing-description {
+        width: 88vw;
+        height: 522px;
+        margin-bottom: 42px;
+    }
+
+    .editing .editing-description .description-field {
+        width: 75vw;
+        height: 377px;
+        box-sizing: border-box;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .editing .editing-description .write {
+        margin-top: 25px;
+        margin-left: 20px;
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .editing .editing-description .experience {
+        display: none;
+    }
+
+    .editing .editing-description .save {
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: 26px;
+    }
+
+    .editing-main .settings-btn {
+        width: 280px;
+        height: 40px;
+        margin-left: calc((100% - 280px) / 2);
+        margin-right: calc((100% - 280px) / 2);
+        font-size: 16px;
+        line-height: 30px;
+    }
+}

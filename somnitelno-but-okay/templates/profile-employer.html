@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="header-nav">
+            <a href="{{ url_for('index') }}" class="logo"> Okay 👌</a>
+            <div class="burger-menu">
+                <ul class="header-nav-list">
+                    <li>
+                        <a href="{{ url_for('index') }}">Портфолио</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('profile_employer') }}" class="active-nav">Контакты</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('editing_employer') }}">Настройки</a>
+                    </li>
+                    <li>
+                        <a href="#contacts" class="FAQ">FAQ</a>
+                    </li>
+                </ul>
+                <div class="nav-profile-container">
+                    {% if current_user.is_authenticated %}
+                    <div class="nav-profile">
+                        <a href="{{ url_for('profile') }}" class="account">
+                            <div class="avatar-profile">
+                                <p>{{ current_user.name[0] }}</p>
+                            </div>
+                            <p class="name-profile">{{ current_user.name }}</p>
+                        </a>
+                        <a href="{{ url_for('logout') }}" class="out">
+                            <img src="{{ url_for('static', filename='img/logout.svg') }}" alt="выход из профиля" class="logout">
+                        </a>
+                    </div>
+                    {% else %}
+                    <div class="authorization">
+                        <button class="enter-account">Войти</button>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="burger">
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <main class="profile-main">
+        <div class="profile-information">
+            <div class="less-information">
+                <p class="name {{ 'verified' if user.is_verified else '' }}">{{ user.name }}</p>
+                <p class="direction">Заказчик</p>
+                <ul class="link-list">
+                    <li class="link-list-item">
+                        <a href="{{ user.company_link }}" class="site">Наш сайт</a>
+                    </li>
+                    <li class="link-list-item">
+                        <a href="{{ user.vk_link }}" class="vk">вконтакте</a>
+                    </li>
+                    <li class="link-list-item">
+                        <a href="{{ user.employer_telegram_link }}" class="telegram">telegram</a>
+                    </li>
+                </ul>
+                <p class="rate">👌 52</p>
+            </div>
+            <div class="main-information">
+                <p class="description">
+                    {{ user.about_us }}
+                </p>
+            </div>
+        </div>
+        <div class="form">
+            <div class="description">
+                <h3>Хотите проверенный аккаунт?</h3>
+                <p>Оставьте заявку и наши специалисты свяжутся с вами, ответят на все вопросы
+                и подберут подходящий вариант.</p>
+            </div>
+            <form action="{{ url_for('submit_verified_account') }}" class="verified-account" method="post">
+                <input type="text" class="name" name="name" placeholder="Ваше имя" autocomplete="name" required>
+                <input type="tel" class="phone" name="phone" placeholder="Ваш телефон" autocomplete="tel" required>
+                <input type="email" class="email" name="email" placeholder="Ваш e-mail" autocomplete="email" required>
+                <p class="accept">Нажимая на кнопку, я соглашаюсь
+                    на обработку персональных данных
+                    и с правилами пользования Платформой</p>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </main>
+    <footer id="contacts">
+        <div class="footer-info">
+        <a href="{{ url_for('index') }}" class="logo"> Okay 👌</a> <br>
+        <a href="tel: +78009001010" class="telephone">8 800 900-10-10</a>
+        <p class="city">г. Екатеринбург</p>
+        <a href="mailto:info@Lorem.ru" class="mail">info@Lorem.ru</a>
+        <ul class="soc-list">
+            <li class="soc-list-item">
+                <a href="#"> <img src="{{ url_for('static', filename='img/VK.svg') }}" alt="VK"></a>
+            </li>
+            <li class="soc-list-item">
+                <a href="#"> <img src="{{ url_for('static', filename='img/YouTube.svg') }}" alt="YouTube"></a>
+            </li>
+            <li class="soc-list-item">
+                <a href="#"> <img src="{{ url_for('static', filename='img/Telegram.svg') }}" alt="Telegram"></a>
+            </li>
+        </ul>
+        <p class="copyright">© ***, Сомнительно но окэй</p>
+        </div>
+    </footer>
+    <div class="login-menu">
+        <form action="{{ url_for('login') }}" class="authorize" method="post">
+            <h1>Авторизация</h1>
+            <input type="text" class="login" name="login" placeholder="Login" autocomplete="nickname">
+            <input type="password" class="password" name="password" placeholder="Password" autocomplete="current-password">
+            <div class="remember">
+                <input type="checkbox" id="remember">
+                <label for="remember">Запомнить данные для входа</label>
+            </div>
+            <button type="submit" class="entrance">Войти</button>
+        </form>
+        <div class="no-account">
+            <p class="account">Еще нет аккаунта?</p>
+            <button class="register-account">Зарегистрироваться</button>
+            <a href="#" class="forgot">Забыли пароль?</a>
+        </div>
+    </div>
+    <div class="register-menu">
+        <form action="{{ url_for('register') }}" class="register" method="post">
+            <h1>Регистрация</h1>
+            <input type="text" class="login" name="login" placeholder="Login" autocomplete="nickname">
+            <input type="email" class="email" name="email" placeholder="E-mail" autocomplete="email">
+            <input type="password" class="password" name="password" placeholder="Пароль" autocomplete="new-password">
+            <input type="password" class="confirm-password" name="confirm-password" placeholder="Подтверждение пароля" autocomplete="new-password">
+            <div class="remember">
+                <input type="checkbox" id="employer" name="employer">
+                <label for="employer">Я заказчик</label>
+            </div>
+            <input type="text" class="promo" name="promo" placeholder="Промокод (Не обязательно)">
+            <button type="submit" class="register-button">Зарегистрироваться</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/burger.js') }}"></script>
+</body>
+</html>

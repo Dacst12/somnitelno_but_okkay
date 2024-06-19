@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Настройки</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/header-footer.css">
+    <link rel="stylesheet" href="static/css/editing.css">
+    <link rel="stylesheet" href="static/css/settings.css">
+    <link rel="stylesheet" href="static/css/form.css">
+    <link rel="stylesheet" href="static/css/register.css">
+    <link rel="stylesheet" href="static/css/login.css">
+</head>
+<body>
+    <header>
+        <nav class="header-nav">
+            <a href="/portfolio" class="logo"> Okay 👌</a>
+            <div class="burger-menu">
+                <ul class="header-nav-list">
+                    <li>
+                        <a href="/portfolio" >Портфолио</a>
+                    </li>
+                    <li>
+                        <a href="/profile-employer" >Контакты</a>
+                    </li>
+                    <li>
+                        <a href="/editing-employer" class="active-nav" >Настройки</a>
+                    </li>
+                    <li>
+                        <a href="#contacts" class="FAQ">FAQ</a>
+                    </li>
+                </ul>
+                <div class="nav-profile-container">
+                    {% if current_user.is_authenticated %}
+                    <div class="nav-profile">
+                        <a href="/profile" class="account">
+                            <div class="avatar-profile">
+                                <p>{{ current_user.name[0] }}</p>
+                            </div>
+                            <p class="name-profile">{{ current_user.name }}</p>
+                        </a>
+                        <a href="/logout" class="out">
+                            <img src="/static/img/logout.svg" alt="выход из профиля" class="logout">
+                        </a>
+                    </div>
+                    {% else %}
+                    <div class="authorization">
+                        <button class="enter-account">Войти</button>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="burger">
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <main class="editing-main">
+        <h1>НАСТРОЙКА ПОРТФОЛИО</h1>
+        <div class="editing">
+            <form action="/editing-employer" method="post" class="editing-profile editing-employer">
+                <h1>НАСТРОЙКА ПОРТФОЛИО</h1>
+                <input type="text" class="name" name="name" placeholder="Введите ваше имя" autocomplete="name">
+                <input type="hidden" name="profession" id="profession"> <!-- Скрытое поле для профессии -->
+                <div class="direction-container">
+                    <button type="button" class="direction designer" onclick="setProfession('Дизайнер')">Дизайнер</button>
+                    <button type="button" class="direction web-programmer" onclick="setProfession('Web-разработчик')">Web-разработчик</button>
+                    <button type="button" class="direction programmer" onclick="setProfession('Программист')">Программист</button>
+                </div>
+                <div class="link-container site-container">
+                    <label for="site" class="site link"> ваш сайт</label>
+                    <input type="url" name="site" id="site" class="link-field">
+                </div>
+                <div class="link-container vk-container">
+                    <label for="vk" class="vk link">вконтакте</label>
+                    <input type="url" name="vk" id="vk" class="link-field">
+                </div>
+                <div class="link-container telegram-container">
+                    <label for="telegram" class="telegram link">telegram</label>
+                    <input type="url" name="telegram" id="telegram" class="link-field">
+                </div>
+                <button type="submit" class="save">Сохранить</button>
+            </form>
+
+            <script>
+            function setProfession(profession) {
+                document.getElementById('profession').value = profession;
+            }
+            </script>
+
+            <form action="/editing-employer" method="post" class="editing-description">
+                <p class="write">Напишите о своей компании</p>
+                <textarea name="description" class="description-field" cols="30" rows="10"></textarea>
+                <p class="experience">Опыт работы</p>
+                <button type="submit" class="save">Сохранить</button>
+            </form>
+            <button class="settings-btn">Открыть настройки профиля</button>
+        </div>
+
+        <div class="change-em-pass">
+            <h1 class="title">НАСТРОЙКА АККАУНТА</h1>
+            <div class="settings-container">
+                <div class="mini-profile">
+                    <div class="avatar-profile">
+                        <p>{{ user.login[0] }}</p>
+                    </div>
+                    <p class="name">{{ user.name }}</p>
+                    <p class="direction">{{ user.profession }}</p>
+                </div>
+                <form action="/change-password" class="change-password" method="post">
+                    <h2>ИЗМЕНИТЬ ПАРОЛЬ</h2>
+                    <input type="password" class="old-password" name="old-password" placeholder="Старый пароль" autocomplete="current-password">
+                    <input type="password" class="new-password" name="new-password" placeholder="Новый пароль" autocomplete="new-password">
+                    <input type="password" class="repeat-password" name="repeat-password" placeholder="Повторите пароль" autocomplete="new-password">
+                    <button type="submit" class="change">СМЕНИТЬ ПАРОЛЬ</button>
+                </form>
+                <form action="/change-email" class="change-email" method="post">
+                    <h2>ИЗМЕНИТЬ E-MAIL</h2>
+                    <input type="email" class="new-email" name="new-email" placeholder="Новый E-mail" autocomplete="email">
+                    <input type="password" class="password" name="password" placeholder="Пароль" autocomplete="current-password">
+                    <button type="submit" class="change">ИЗМЕНИТЬ E-MAIL</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer id="contacts">
+        <div class="footer-info">
+        <a href="/portfolio" class="logo"> Okay 👌</a> <br>
+        <a href="tel: +78009001010" class="telephone">8 800 900-10-10</a>
+        <p class="city">г. Екатеринбург</p>
+        <a href="mailto:info@Lorem.ru" class="mail">info@Lorem.ru</a>
+        <ul class="soc-list">
+            <li class="soc-list-item">
+                <a href="#"> <img src="static/img/VK.svg" alt="VK"></a>
+            </li>
+            <li class="soc-list-item">
+                <a href="#"> <img src="static/img/YouTube.svg" alt="YouTube"></a>
+            </li>
+            <li class="soc-list-item">
+                <a href="#"> <img src="static/img/Telegram.svg" alt="Telegram"></a>
+            </li>
+        </ul>
+        <p class="copyright">© ***, Сомнительно но окэй</p>
+        </div>
+    </footer>
+    <div class="login-menu">
+        <form action="/login" class="authorize" method="post">
+            <h1>Авторизация</h1>
+            <input type="text" class="login" name="login" placeholder="Login" autocomplete="nickname">
+            <input type="password" class="password" name="password" placeholder="Password" autocomplete="current-password">
+            <div class="remember">
+                <input type="checkbox" id="remember">
+                <label for="remember">Запомнить данные для входа</label>
+            </div>
+            <button type="submit" class="entrance">Войти</button>
+        </form>
+        <div class="no-account">
+            <p class="account">Еще нет аккаунта?</p>
+            <button class="register-account">Зарегистрироваться</button>
+            <a href="#" class="forgot">Забыли пароль?</a>
+        </div>
+    </div>
+    <div class="register-menu">
+        <form action="/register" class="register" method="post">
+            <h1>Регистрация</h1>
+            <input type="text" class="login" name="login" placeholder="Login" autocomplete="nickname">
+            <input type="email" class="email" name="email" placeholder="E-mail" autocomplete="email">
+            <input type="password" class="password" name="password" placeholder="Пароль" autocomplete="new-password">
+            <input type="password" class="confirm-password" name="confirm-password" placeholder="Подтверждение пароля" autocomplete="new-password">
+            <div class="remember">
+                <input type="checkbox" id="employer" name="employer">
+                <label for="employer">Я заказчик</label>
+            </div>
+            <input type="text" class="promo" name="promo" placeholder="Промокод (Не обязательно)">
+            <button type="submit" class="register-button">Зарегистрироваться</button>
+        </form>
+    </div>
+    <script src="static/js/login.js"></script>
+    <script src="static/js/register.js"></script>
+    <script src="static/js/settings.js"></script>
+    <script src="static/js/burger.js"></script>
+</body>
+</html>

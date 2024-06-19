@@ -1,0 +1,222 @@
+.register-menu {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 433px;
+    width: 395px;
+    margin: auto;
+    border-radius: 12px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.register {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 323px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.register h1 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39.01px;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin: auto;
+    margin-bottom: 27px;
+}
+
+.register .login {
+    height: 26px;
+    border-radius: 5px 0px 0px 0px;
+    border: none;
+    margin-bottom: 3px;
+    margin-top: 10px;
+    text-indent: 15px;
+}
+
+.register .login::placeholder {
+    color: #8A8A8A;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.63px;
+    letter-spacing: -0.03em;
+}
+
+.register .login:focus,
+.register .email:focus,
+.register .password:focus,
+.register .confirm-password:focus,
+.register .promo:focus {
+    outline: none;
+}
+
+.register .email::placeholder {
+    color: #8A8A8A;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.63px;
+    letter-spacing: -0.03em;
+}
+
+.register .email {
+    height: 26px;
+    border-radius: 0px 0px 5px 5px;
+    border: none;
+    margin-bottom: 15px;
+    text-indent: 15px;
+}
+
+.register .password {
+    height: 26px;
+    border-radius: 5px 0px 0px 0px;
+    border: none;
+    margin-bottom: 3px;
+    margin-top: 10px;
+    text-indent: 15px;
+}
+
+.register .password::placeholder {
+    color: #8A8A8A;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.63px;
+    letter-spacing: -0.03em;
+}
+
+.register .confirm-password::placeholder {
+    color: #8A8A8A;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.63px;
+    letter-spacing: -0.03em;
+}
+
+.register .confirm-password {
+    height: 26px;
+    border-radius: 0px 0px 5px 5px;
+    border: none;
+    margin-bottom: 15px;
+    text-indent: 15px;
+}
+
+.register .remember {
+    display: flex;
+    margin: auto;
+    width: 261px;
+    margin-bottom: 15px;
+}
+
+.register input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none; 
+    appearance: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 2px;
+    margin-right: 4px;
+    margin-top: 0.5px;
+    margin-bottom: 0.5px;
+}
+
+.register input[type="checkbox"]:checked {
+    background-image: url('../img/check.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.register .remember label {
+    color: #8F8F8F;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14.63px;
+    letter-spacing: -0.03em;
+}
+
+.register .promo {
+    background-color: #090909;
+    height: 34px;
+    border: 1px solid #FDC739;
+    border-radius: 5px;
+    text-indent: 15px;
+    margin-bottom: 20px;
+}
+
+.register .promo::placeholder {
+    color: #8A8A8A;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14.63px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    letter-spacing: -0.03em;
+}
+
+.register .promo:focus {
+    color: #ffffff;
+}
+
+.register button.register-button {
+    width: 323px;
+    height: 34px;
+    background-color: #FDC739;
+    border:none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 34px;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+}
+
+
+/* adaptive */
+
+@media (max-width:900px) {
+    .register-menu {
+        width: 290px;
+        height: 380px;
+    }
+
+    .register {
+        width: 261px;
+    }
+
+    .register h1 {
+        font-size: 20px;
+        line-height: 24.38px;
+    }
+
+    .register .login {
+        width: 261px;
+        margin-top: 0;
+    }
+
+    .register .email {
+        width: 261px;
+        margin-bottom: 27px;
+    }
+
+    .register .password {
+        width: 261px;
+        margin-top: 0;
+    }
+
+    .register .confirm-password {
+        width: 261px;
+    }
+
+    .register .promo {
+        width: 261px;
+        margin-bottom: 17px;
+    }
+    
+    .register button.register-button {
+        width: 261px;
+    }
+}

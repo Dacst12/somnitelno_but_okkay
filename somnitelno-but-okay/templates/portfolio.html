@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/header-footer.css">
+    <link rel="stylesheet" href="static/css/portfolio.css">
+    <link rel="stylesheet" href="static/css/register.css">
+    <link rel="stylesheet" href="static/css/login.css">
+    <link rel="stylesheet" href="static/css/form.css">
+</head>
+<body>
+    <header>
+        <nav class="header-nav">
+            <a href="/" class="logo"> Okay 👌</a>
+            <div class="burger-menu">
+                <ul class="header-nav-list">
+                    <li>
+                        <a href="/portfolio" class="active-nav">Портфолио</a>
+                    </li>
+                    {% if current_user.is_authenticated %}
+                    <li>
+                        <a href="#contacts">Контакты</a>
+                    </li>
+                    <li>
+                        <a href="/editing-employer">Настройки</a> <!--editing-employer для аккаунтов заказчиков-->
+                    </li>
+                    {% endif %}
+                    <li>
+                        <a href="#" class="FAQ">FAQ</a>
+                    </li>
+                </ul>
+                <div class="nav-profile-container">
+                    {% if current_user.is_authenticated %}
+                    <div class="nav-profile">
+                        <a href="{{ url_for('profile_employer') }}" class="account"> <!--profile-employer.html для аккаунтов заказчиков-->
+                            <div class="avatar-profile">
+                                <p>{{ current_user.name[0] }}</p> <!--Тут должна быть первая буква имени пользователя-->
+                            </div>
+                            <p class="name-profile">{{ current_user.name }}</p>
+                        </a>
+                        <a href="{{ url_for('logout') }}" class="out">
+                            <img src="{{ url_for('static', filename='img/logout.svg') }}" alt="выход из профиля" class="logout">
+                        </a>
+                    </div>
+                    {% else %}
+                    <div class="authorization">
+                        <button class="enter-account">Войти</button>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="burger">
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <main class="portfolio-main">
+        <h1>Все портфолио</h1>
+        <section class="filter">
+            <div class="up-filter">
+                <button class="employers" onclick="handleButtonClick('type', 'employers')">
+                    <img src="static/img/employer.svg" alt="employers">
+                    <div>
+                        Заказчики<br>
+                        <span>Lorem</span>
+                    </div>
+                </button>
+                <button class="perfomers active" onclick="handleButtonClick('type', 'perfomers')">
+                    <img src="static/img/perfomers.svg" alt="perfomers">
+                    <div>
+                        Исполнители <br>
+                        <span>Lorem</span>
+                    </div>
+                </button>
+                <div class="border"></div>
+            </div>
+            <div class="left-filter">
+                <div class="title">
+                    <div class="mobile-filter">
+                        <img src="static/img/filter.svg" alt="иконка фильтра">
+                        <p class="filter-p">Фильтры</p>
+                    </div>
+                    <button class="close-button">&times;</button>
+                </div>
+                <p>Уровень</p>
+                <ul class="level-list">
+                    <li class="level-list-item">
+                        <button class="junior" onclick="handleButtonClick('level', 'junior')"><span>Junior</span></button>
+                    </li>
+                    <li class="level-list-item">
+                        <button class="middle" onclick="handleButtonClick('level', 'middle')"><span>Middle</span></button>
+                    </li>
+                    <li class="level-list-item">
+                        <button class="senior" onclick="handleButtonClick('level', 'senior')"><span>Senior</span></button>
+                    </li>
+                </ul>
+                <div class="underline"></div>
+                <p class="account">Аккаунт</p>
+                <ul class="account-list">
+                    <li class="account-list-item">
+                        <button class="any" onclick="handleButtonClick('account', 'any')"><span>Любой</span></button>
+                    </li>
+                    <li class="account-list-item">
+                        <button class="verified" onclick="handleButtonClick('account', 'verified')"><span>Проверенный</span></button>
+                    </li>
+                    <li class="account-list-item">
+                        <button class="unverified" onclick="handleButtonClick('account', 'unverified')"><span>Не проверенный</span></button>
+                    </li>
+                </ul>
+                <button class="show">
+                    Показать
+                </button><br>
+                <img src="static/img/banner.png" alt="баннер" class="banner"> <br>
+                <img src="static/img/banner.png" alt="баннер" class="banner">
+            </div>
+            <div class="down-filter">
+                <p>Направление</p>
+            <ul class="direction-list">
+                <li class="direction-list-item">
+                    <button class="programmer" onclick="handleButtonClick('direction', 'programmer')">Программисты</button>
+                </li>
+                <li class="direction-list-item">
+                    <button class="designer" onclick="handleButtonClick('direction', 'designer')">Дизайнеры</button>
+                </li>
+                <li class="direction-list-item">
+                    <button class="web-programmer" onclick="handleButtonClick('direction', 'web-programmer')">Web-разработчики</button>
+                </li>
+            </ul>
+            </div>
+            <div class="mobile-filter-btn">
+                <div class="mobile-filter">
+                    <img src="static/img/filter.svg" alt="иконка фильтра">
+                    <p>Фильтры</p>
+                </div>
+            </div>
+        </section>
+        <div class="portfolio">
+            <section class="portfolio-perfomers curent-portfolio"> <!--В этом блоке портфолио исполнителей-->
+                {% for performer in performers %}
+                <a href="/profile/{{ performer.id }}" class="user-portfolio {% if performer.is_verified %}verified{% endif %}">
+                    <div class="name-container">
+                        <p class="name">{{ performer.name }}</p>
+                        {% if performer.is_verified %}
+                        <span class="verified-icon"></span>
+                        {% endif %}
+                    </div>
+                    <div class="user-profile">
+                        <div class="avatar-profile">
+                            <p>{{ performer.name[0] }}</p> <!--Тут должна быть первая буква имени пользователя-->
+                        </div>
+                        <p class="name-profile {% if performer.is_verified %}verified{% endif %}">{{ performer.name }}</p>
+                    </div>
+                    <p class="description">{{ performer.about_me }}</p>
+                    <p class="experience">Опыт работы {{ performer.experience_level }}</p>
+                </a>
+                {% endfor %}
+            </section>
+            <section class="portfolio-employer"> <!--В этом блоке портфолио заказчиков-->
+                {% for employer in employers %}
+                <a href="/profile-employer/{{ employer.id }}" class="user-portfolio {% if employer.is_verified %}verified{% endif %}">
+                    <p class="name">{{ employer.name }}</p>
+                    <div class="user-profile">
+                        <div class="avatar-profile">
+                            <p>{{ employer.name[0] }}</p>
+                        </div>
+                        <p class="name-profile {% if employer.is_verified %}verified{% endif %}">{{ employer.name }}</p>
+                    </div>
+                    <p class="description">{{ employer.about_us }}</p>
+                </a>
+                {% endfor %}
+            </section>
+        </div>
+        <button class="show-more-button">Открыть ещё</button>
+            <div class="form">
+                <div class="description">
+                    <h3>Хотите проверенный аккаунт?</h3>
+                    <p>Оставьте заявку и наши специалисты свяжутся с вами, ответят на все вопросы
+                    и подберут подходящий вариант.</p>
+                </div>
+                <form action="{{ url_for('submit_verified_account') }}" class="verified-account" method="post">
+                    <input type="text" class="name" name="name" placeholder="Ваше имя" autocomplete="name" required>
+                    <input type="tel" class="phone" name="phone" placeholder="Ваш телефон" autocomplete="tel" required>
+                    <input type="email" class="email" name="email" placeholder="Ваш e-mail" autocomplete="email" required>
+                    <p class="accept">Нажимая на кнопку, я соглашаюсь
+                        на обработку персональных данных
+                        и с правилами пользования Платформой</p>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+    </main>
+    <footer id="contacts">
+        <div class="footer-info">
+            <a href="/portfolio" class="logo"> Okay 👌</a> <br>
+            <a href="tel: +78009001010" class="telephone">8 800 900-10-10</a>
+            <p class="city">г. Екатеринбург</p>
+            <a href="mailto:info@Lorem.ru" class="mail">info@Lorem.ru</a>
+            <ul class="soc-list">
+                <li class="soc-list-item">
+                    <a href="#"> <img src="static/img/VK.svg" alt="VK"></a>
+                </li>
+                <li class="soc-list-item">
+                    <a href="#"> <img src="static/img/YouTube.svg" alt="YouTube"></a>
+                </li>
+                <li class="soc-list-item">
+                    <a href="#"> <img src="static/img/Telegram.svg" alt="Telegram"></a>
+                </li>
+            </ul>
+            <p class="copyright">© ***, Сомнительно но окэй</p>
+        </div>
+    </footer>
+    <div class="login-menu">
+        <form action="/login" class="authorize" method="post">
+            <h1>Авторизация</h1>
+            <input type="text" class="login" name="login" placeholder="Login" autocomplete="nickname">
+            <input type="password" class="password" name="password" placeholder="Password" autocomplete="current-password">
+            <div class="remember">
+                <input type="checkbox" id="remember">
+                <label for="remember">Запомнить данные для входа</label>
+            </div>
+            <button type="submit" class="entrance">Войти</button>
+        </form>
+        <div class="no-account">
+            <p class="account">Еще нет аккаунта?</p>
+            <button class="register-account">Зарегистрироваться</button>
+            <a href="#" class="forgot">Забыли пароль?</a>
+        </div>
+    </div>
+    <div class="register-menu">
+        <form action="/register" class="register" method="post">
+            <h1>Регистрация</h1>
+            <input type="text" class="login" name="login" placeholder="Login" autocomplete="nickname">
+            <input type="email" class="email" name="email" placeholder="E-mail" autocomplete="email">
+            <input type="password" class="password" name="password" placeholder="Пароль" autocomplete="new-password">
+            <input type="password" class="confirm-password" name="confirm-password" placeholder="Подтверждение пароля" autocomplete="new-password">
+            <div class="remember">
+                <input type="checkbox" id="employer" name="employer">
+                <label for="employer">Я заказчик</label>
+            </div>
+            <input type="text" class="promo" name="promo" placeholder="Промокод (Не обязательно)">
+            <button type="submit" class="register-button">Зарегистрироваться</button>
+        </form>
+    </div>
+    <script src="static/js/login.js"></script>
+    <script src="static/js/register.js"></script>
+    <script src="static/js/filter.js"></script>
+    <script src="static/js/burger.js"></script>
+    <script src="static/js/show-more.js"></script>
+</body>
+</html>

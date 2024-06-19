@@ -1,0 +1,173 @@
+.form {
+    position: relative;
+    display: flex;
+    width: 986px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 270px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    top: 182px;
+    background-image: url("../img/Union.svg");
+    background-repeat: no-repeat;
+    background-position: 38.21px center;
+    box-shadow: 0 0 25px -5px rgba(253, 197, 53, 0.3);
+}
+
+.form .description {
+    margin-top: 62.45px;
+    margin-bottom: 56.08px;
+    margin-left: 87.42px;
+    margin-right: 65.78px;
+}
+
+.form .description h3 {
+    display: block;
+    width: 352.8px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24.38px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.form .description p {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.form .verified-account {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form .verified-account .name {
+    width: 440px;
+    height: 50px;
+    margin-top: 40px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    background-color: #00093C1A;
+    border-radius: 6px;
+    border: none;
+    padding: 0;
+    text-indent: 19px;
+}
+
+.form .verified-account .name::placeholder {
+    color: #4F4F4F;
+    line-height: 17.07px;
+}
+
+.form .verified-account .name:focus {
+    color: #4F4F4F;
+    line-height: 17.07px;
+}
+
+.form .verified-account .phone {
+    width: 210px;
+    height: 50px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #00093C1A;
+    border-radius: 6px;
+    border: none;
+    padding: 0;
+    text-indent: 19px;
+}
+
+.form .verified-account .phone::placeholder {
+    color: #4F4F4F;
+    line-height: 17.07px;
+}
+
+.form .verified-account .phone:focus {
+    color: #4F4F4F;
+    line-height: 17.07px;
+}
+
+.form .verified-account .email {
+    width: 210px;
+    height: 50px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    background-color: #00093C1A;
+    border-radius: 6px;
+    border: none;
+    padding: 0;
+    text-indent: 19px;
+}
+
+.form .verified-account .email::placeholder {
+    color: #4F4F4F;
+    line-height: 17.07px;
+}
+
+.form .verified-account .email:focus {
+    color: #4F4F4F;
+    line-height: 17.07px;
+}
+
+.form .verified-account .accept {
+    display: block;
+    width: 210px;
+    color: #4F4F4F;
+    font-size: 10px;
+    line-height: 14px;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.form .verified-account button {
+    background-color: #FDC739;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 26px;
+    border: none;
+    border-radius: 10px;
+    width: 210px;
+    height: 50px;
+    margin-left: 18.5px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+}
+
+
+/* adaptive */
+
+@media (max-width: 1024px) {
+    .form {
+       width: 900px;
+    }
+
+    .form .verified-account .name {
+        width: 354px;
+    }
+
+    .form .verified-account .phone {
+        width: 167px;
+    }
+
+    .form .verified-account .email {
+        width: 167px;
+    }
+
+    .form .verified-account .accept {
+        width: 167px;
+        font-size: 8px;
+    }
+
+    .form .verified-account button {
+        width: 167px;
+    }
+}
+
+@media (max-width:900px) {
+    .form {
+        display: none;
+    }
+}
+

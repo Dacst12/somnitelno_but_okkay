@@ -1,0 +1,220 @@
+.login-menu {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 491px;
+    width: 395px;
+    margin: auto;
+    border-radius: 12px;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.blur {
+    filter: blur(2px);
+    pointer-events: none;
+}
+
+.authorize h1 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39.01px;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin: auto;
+    margin-top:0;
+    margin-bottom: 27px;
+    padding-top: 30px;
+}
+
+.authorize {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 323px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.authorize .login {
+    height: 26px;
+    border-radius: 5px 0px 0px 0px;
+    border: none;
+    margin-bottom: 3px;
+    margin-top: 10px;
+    text-indent: 15px;
+}
+
+.authorize .login::placeholder {
+    color: #8A8A8A;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.63px;
+    letter-spacing: -0.03em;
+}
+
+.authorize .login:focus,
+.authorize .password:focus {
+    outline: none;
+}
+
+.authorize .password::placeholder {
+    color: #8A8A8A;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.63px;
+    letter-spacing: -0.03em;
+}
+
+.authorize .password {
+    height: 26px;
+    border-radius: 0px 0px 5px 5px;
+    border: none;
+    margin-bottom: 10px;
+    text-indent: 15px;
+}
+
+.authorize .remember {
+    display: flex;
+    margin: auto;
+    width: 261px;
+    margin-top: 27px;
+    margin-bottom: 27px;
+}
+
+.authorize input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none; 
+    appearance: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 2px;
+    margin-right: 4px;
+    margin-top: 0.5px;
+    margin-bottom: 0.5px;
+}
+
+.authorize input[type="checkbox"]:checked {
+    background-image: url("../img/check.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.authorize .remember label {
+    color: #8F8F8F;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14.63px;
+    letter-spacing: -0.03em;
+}
+
+.authorize .entrance {
+    width: 317px;
+    height: 49px;
+    border-radius: 5px;
+    border: none;
+    background-color: #FDC739;
+    color: #FFFFFF;
+    font-size: 24px;
+    line-height: 29.26px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+}
+
+.no-account {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 317px;
+    margin: auto;
+}
+
+.no-account .account {
+    color: #8F8F8F;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 14.18px;
+    letter-spacing: -0.04em;
+    margin: auto;
+    margin-bottom: 17px;
+}
+
+.no-account .register-account {
+    background-color: #000000;
+    border: 1px solid #FDC739;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19.5px;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    width: 317px;
+    height: 33px;
+}
+
+.no-account .forgot {
+    color: #8F8F8F;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 14.18px;
+    letter-spacing: -0.04em;
+    margin: auto;
+    margin-top: 17px;
+}
+
+
+/* adaptive */
+@media (max-width:900px) {
+    .login-menu {
+        width: 290px;
+        height: 384px;
+    }
+
+    .authorize {
+        width: 261px;
+    }
+
+    .authorize h1 {
+        font-size: 20px;
+        line-height: 24.38px;
+    }
+
+    .authorize .login {
+        margin-top: 0;
+        width: 261px;
+    }
+
+    .authorize .password {
+        width: 261px;
+        margin-bottom: 0;
+    }
+
+    .authorize .entrance {
+        width: 261px;
+        height: 34px;
+        font-size: 16px;
+        line-height: 19.5px;
+        margin-bottom: 16px;
+    }
+
+    .no-account {
+        width: 261px;
+    }
+
+    .no-account .account {
+        font-size: 12px;
+        line-height: 11.34px;
+    }
+
+    .no-account .register-account {
+        width: 261px;
+    }
+
+    .no-account .forgot {
+        font-size: 12px;
+        line-height: 11.34px;
+    }
+}

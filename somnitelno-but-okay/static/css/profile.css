@@ -1,0 +1,292 @@
+.profile-main .profile-information {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 44px;
+    width: 80%;
+    margin: auto;
+    margin-top: 155px;
+}
+
+.profile-information .less-information {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: 367px;
+    background-color: #E0E0E0;
+    border-radius: 20px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.profile-information .less-information .name {
+    margin-top: 25px;
+    margin-left: 36px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39.01px;
+}
+
+.profile-information .less-information .verified {
+    background-image: url('../img/verify.svg');
+    background-size: 26.25px 26.25px;
+    background-position: 101.5px center;
+    background-repeat: no-repeat;
+}
+
+.profile-information .less-information .direction {
+    margin-left: 36px;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24.38px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.profile-information .less-information .experience {
+    margin-left: 36px;
+    margin-top: 0;
+    margin-bottom: 14.35px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15.85px;
+    text-transform: lowercase;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.profile-information .less-information ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 36px;
+    margin-bottom: 20px;
+}
+
+.profile-information .less-information li {
+    margin-bottom: 10px;
+}
+
+.profile-information .less-information li a{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24.38px;
+    text-decoration: none;
+    color: #000000;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.profile-information .less-information .github {
+    background-image: url("../img/github.svg");
+    background-repeat: no-repeat;
+    padding-left: 31px;
+}
+
+.profile-information .less-information .leetcode {
+    background-image: url("../img/leetcode.svg");
+    background-repeat: no-repeat;
+    padding-left: 31px;
+}
+
+.profile-information .less-information .telegram {
+    background-image: url("../img/telegram-link.svg");
+    background-repeat: no-repeat;
+    padding-left: 31px;
+}
+
+.profile-information .less-information .figma {
+    background-image: url("../img/figma.svg");
+    background-repeat: no-repeat;
+    padding-left: 31px;
+}
+
+.profile-information .less-information .site {
+    background-image: url("../img/site.svg");
+    background-repeat: no-repeat;
+    padding-left: 31px;
+}
+
+.profile-information .less-information .vk {
+    background-image: url("../img/vk-s.svg");
+    background-repeat: no-repeat;
+    padding-left: 31px;
+}
+
+.profile-information .less-information .rate {
+    margin: 0;
+    margin-left: 36px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 22.68px;
+    letter-spacing: -0.04em;
+}
+
+.profile-information .main-information {
+    width: calc(100% - 324px);
+    height: 367px;
+    display: flex;
+    flex-direction: column;
+    background-color: #E0E0E0;
+    border-radius: 20px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.profile-information .main-information .description {
+    margin-left: 140px;
+    margin-right: 140px;
+    margin-top: 71px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+}
+
+.profile-information .main-information .experience {
+    margin-top: auto;
+    margin-left: 140px;
+    margin-right: 140px;
+    margin-bottom: 38px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29.26px;
+}
+
+
+/*adaptive*/
+
+@media (max-width:1600px) {
+    .profile-information .main-information .description {
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+
+    .profile-information .main-information .experience {
+        margin-left: 70px;
+        margin-right: 70px;
+        font-size: 20px;
+    } 
+}
+
+@media (max-width:1250px) {
+    .profile-information .main-information .description {
+        margin-left: 35px;
+        margin-right: 35px;
+        margin-top: 40px;
+    }
+
+    .profile-information .main-information .experience {
+        margin-left: 35px;
+        margin-right: 35px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .profile-main .profile-information {
+        gap: 26px;
+        margin-top: 44px;
+    }
+
+    .profile-information .main-information {
+        width: 100%;
+        min-height: 367px;
+        height: 100%;
+    }
+}
+
+@media (max-width:800px) {
+    .profile-information .main-information .experience {
+        font-size: 16px;
+        line-height: 19.5px;
+        margin-bottom: 17px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .profile-information .main-information .description {
+        font-size: 14px;
+        line-height: 18px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .profile-information .less-information {
+        width: 210px;
+        height: 232px;
+    }
+
+    .profile-information .less-information .name {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29.26px;
+        margin-bottom: 8px;
+        margin-top: 14px;
+        margin-left: 21px;
+    }
+
+    .profile-information .less-information .verified {
+        background-size: 24px 24px;
+        background-position: 75px center;
+    }
+
+    .profile-information .less-information .direction {
+        margin-left: 21px;
+        font-size: 16px;
+        line-height: 19.5px;
+    }
+
+    .profile-information .less-information .experience {
+        margin-left: 21px;
+        margin-bottom: 5px;
+    }
+
+    .profile-information .less-information ul {
+        padding-left: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-left: 21px;
+        margin-bottom: 0px;
+    }
+
+    .profile-information .less-information li {
+        margin-bottom: 0px;
+    }
+
+    .profile-information .less-information .rate {
+        display: block;
+        margin-left: auto;
+        margin-top: auto;
+        background-color: #000000;
+        width: 66px;
+        height: 36px;
+        line-height: 36px;
+        color: #ffffff;
+        border-radius: 19px 0px 19px 0px;
+    }
+}
+
+.less-information {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-container {
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    margin-right: 10px;
+}
+
+.verified-icon {
+    background-image: url('../img/verify.svg');
+    background-size: 26.25px 26.25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 26.25px;
+    height: 26.25px;
+    margin-top: 26px;
+}

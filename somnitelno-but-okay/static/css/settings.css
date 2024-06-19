@@ -1,0 +1,456 @@
+.change-em-pass {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1; 
+    transform: translateY(-140%);
+    transition: 0.8s ease;
+}
+
+.change-em-pass.active {
+    transform: translateY(0);
+    position: relative;
+    z-index: 10;
+}
+.change-em-pass .settings-container {
+    display: flex;
+}
+
+.change-em-pass .title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 60.48px;
+    letter-spacing: -0.04em;
+    margin-top: 158px;
+    margin-bottom: 79px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.change-em-pass .mini-profile {
+    width: 301px;
+    height: 220px;
+    background-color: #E0E0E0;
+    border-radius: 15px;
+    margin-right: 56px;
+}
+
+.change-em-pass .mini-profile .avatar-profile {
+    display: flex;
+    align-items: center;
+    width: 85.62px;
+    height: 85.62px;
+    border-radius: 50%;
+    background-color: #FDC739;
+    box-shadow: 0 0 0 5px rgba(253, 199, 57, 0.3);
+    margin-left: 107.69px;
+    margin-top: 30.19px;
+    margin-bottom: 17.19px;
+}
+
+.change-em-pass .mini-profile .avatar-profile p {
+    margin: auto;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 37.8px;
+}
+
+.change-em-pass .mini-profile .name {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 22.68px;
+    letter-spacing: -0.04em;
+    color: #000000;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 7px;
+}
+
+.change-em-pass .mini-profile .direction {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 14.18px;
+    letter-spacing: -0.04em;
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    margin-top: 0;
+}
+
+.change-em-pass .change-password {
+    width: 564px;
+    height: 272px;
+    background-color: #E0E0E0;
+    border-radius: 15px;
+    margin-right: 37px;
+}
+
+.change-em-pass .change-password h2 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24.38px;
+    letter-spacing: -0.03em;
+    color: #000000;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.change-em-pass .change-password .old-password {
+    width: 485px;
+    height: 31px;
+    border-radius: 5px;
+    border: none;
+    text-indent: 15px;
+    margin-left: 39.5px;
+    margin-bottom: 20px;
+    transition: filter 0.3s;
+}
+
+.change-em-pass .change-password .old-password:hover {
+    filter: drop-shadow(0 5px 5px rgba(253, 199, 57, 0.24));
+    cursor: pointer;
+}
+
+.change-em-pass .change-password .old-password:focus {
+    outline: none;
+}
+
+.change-em-pass .change-password .old-password::placeholder {
+    color: #8A8A8A;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14.63px;
+    letter-spacing: -0.03em;
+}
+
+.change-em-pass .change-password .new-password {
+    width: 485px;
+    height: 31px;
+    border-radius: 5px;
+    border: none;
+    text-indent: 15px;
+    margin-left: 39.5px;
+    margin-bottom: 20px;
+    transition: filter 0.3s;
+}
+
+.change-em-pass .change-password .new-password:hover {
+    filter: drop-shadow(0 5px 5px rgba(253, 199, 57, 0.24));
+    cursor: pointer;
+}
+
+.change-em-pass .change-password .new-password:focus {
+    outline: none;
+}
+
+.change-em-pass .change-password .new-password::placeholder {
+    color: #8A8A8A;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14.63px;
+    letter-spacing: -0.03em;
+}
+
+.change-em-pass .change-password .repeat-password {
+    width: 485px;
+    height: 31px;
+    border-radius: 5px;
+    border: none;
+    text-indent: 15px;
+    margin-left: 39.5px;
+    margin-bottom: 20px;
+    transition: filter 0.3s;
+}
+
+.change-em-pass .change-password .repeat-password:hover {
+    filter: drop-shadow(0 5px 5px rgba(253, 199, 57, 0.24));
+    cursor: pointer;
+}
+
+.change-em-pass .change-password .repeat-password:focus {
+    outline: none;
+}
+
+.change-em-pass .change-password .repeat-password::placeholder {
+    color: #8A8A8A;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14.63px;
+    letter-spacing: -0.03em;
+}
+
+.change-em-pass .change-password .change {
+    display: block;
+    margin: auto;
+    width: 237px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FDC739;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19.5px;
+    letter-spacing: -0.03em;
+}
+
+.change-em-pass .change-email {
+    width: 564px;
+    height: 272px;
+    background-color: #E0E0E0;
+    border-radius: 15px;
+}
+
+.change-em-pass .change-email h2 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24.38px;
+    letter-spacing: -0.03em;
+    color: #000000;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.change-em-pass .change-email .new-email {
+    width: 485px;
+    height: 31px;
+    border-radius: 5px;
+    border: none;
+    text-indent: 15px;
+    margin-left: 56px;
+    margin-bottom: 20px;
+    transition: filter 0.3s;
+}
+
+.change-em-pass .change-email .new-email:hover {
+    filter: drop-shadow(0 5px 5px rgba(253, 199, 57, 0.24));
+    cursor: pointer;
+}
+
+.change-em-pass .change-email .new-email:focus {
+    outline: none;
+}
+
+.change-em-pass .change-email .new-email::placeholder {
+    color: #8A8A8A;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14.63px;
+    letter-spacing: -0.03em;
+}
+
+.change-em-pass .change-email .password {
+    width: 485px;
+    height: 31px;
+    border-radius: 5px;
+    border: none;
+    text-indent: 15px;
+    margin-left: 56px;
+    margin-bottom: 71px;
+    transition: filter 0.3s;
+}
+
+.change-em-pass .change-email .password:hover {
+    filter: drop-shadow(0 5px 5px rgba(253, 199, 57, 0.24));
+    cursor: pointer;
+}
+
+.change-em-pass .change-email .password:focus {
+    outline: none;
+}
+
+.change-em-pass .change-email .password::placeholder {
+    color: #8A8A8A;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14.63px;
+    letter-spacing: -0.03em;
+}
+
+.change-em-pass .change-email .change {
+    display: block;
+    margin: auto;
+    width: 237px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FDC739;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19.5px;
+    letter-spacing: -0.03em;
+}
+
+@media (max-width:1600px) {
+
+    .change-em-pass .mini-profile {
+        width: 196px;
+    }
+
+    .change-em-pass .mini-profile .avatar-profile {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .change-em-pass .change-password {
+        width: 367px;
+    }
+
+    .change-em-pass .change-password .old-password {
+        width: 315px;
+        margin-left: 26px;
+        margin-right: 26px;
+    }
+
+    .change-em-pass .change-password .new-password {
+        width: 315px;
+        margin-left: 26px;
+        margin-right: 26px;
+    }
+
+    .change-em-pass .change-password .repeat-password {
+        width: 315px;
+        margin-left: 26px;
+        margin-right: 26px;
+    }
+
+    .change-em-pass .change-email {
+        width: 367px;
+    }
+
+    .change-em-pass .change-email .new-email {
+        width: 315px;
+        margin-left: 26px;
+        margin-right: 26px;
+    }
+
+    .change-em-pass .change-email .password {
+        width: 315px;
+        margin-left: 26px;
+        margin-right: 26px;
+    }
+}
+
+@media (max-width: 1070px) {
+
+    .change-em-pass {
+        margin: 0 calc((100% - 738px) / 2);
+    }
+
+    .change-em-pass .title {
+        font-size: 36px;
+        line-height: 32px;
+    }
+
+    .change-em-pass .mini-profile {
+        width: 138px;
+        height: 191px;
+        margin-right: 20px;
+    }
+
+    .change-em-pass .change-password {
+        width: 280px;
+        height: 235px;
+        margin-right: 20px;
+    }
+
+    .change-em-pass .change-password h2 {
+        margin-bottom: 15px;
+    }
+
+    .change-em-pass .change-password .old-password {
+        width: 242px;
+        height: 26px;
+        margin-left: 19px;
+        margin-right: 19px;
+        margin-bottom: 15px;
+    }
+
+    .change-em-pass .change-password .new-password {
+        width: 242px;
+        height: 26px;
+        margin-left: 19px;
+        margin-right: 19px;
+        margin-bottom: 15px;
+    }
+
+    .change-em-pass .change-password .repeat-password {
+        width: 242px;
+        height: 26px;
+        margin-left: 19px;
+        margin-right: 19px;
+        margin-bottom: 15px;
+    }
+
+    .change-em-pass .change-email {
+        width: 280px;
+        height: 242px;
+    }
+
+    .change-em-pass .change-email h2 {
+        margin-bottom: 15px;
+    }
+
+    .change-em-pass .change-email .new-email {
+        width: 242px;
+        height: 26px;
+        margin-left: 19px;
+        margin-right: 19px;
+        margin-bottom: 15px;
+    }
+
+    .change-em-pass .change-email .password {
+        width: 242px;
+        height: 26px;
+        margin-left: 19px;
+        margin-right: 19px;
+        margin-bottom: 56px;
+    }
+
+    .change-em-pass .change-password .change {
+        width: 184px;
+        height: 34px;
+    }
+
+    .change-em-pass .change-email .change {
+        width: 184px;
+        height: 34px;
+    }
+}
+
+@media (max-width:780px) {
+
+    .change-em-pass {
+        margin: 0 calc((100% - 280px) / 2);
+    }
+    
+    .change-em-pass .title {
+        display: none;
+    }
+
+    .change-em-pass .settings-container {
+        flex-direction: column;
+    }
+
+    .change-em-pass .change-password {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .change-em-pass .mini-profile {
+        margin-top: 42px;
+        margin-bottom: 20px;
+    }
+
+    .change-em-pass .change-email {
+        width: 280px;
+        height: 211px;
+    }
+
+    .change-em-pass .change-email .password {
+        margin-bottom: 32px;
+    }
+}
